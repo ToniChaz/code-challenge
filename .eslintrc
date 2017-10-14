@@ -38,6 +38,11 @@
         "optionalDependencies": false,
         "peerDependencies": false
       }
-    ]
+    ],
+    "semi": [2, "never"],
+    "comma-dangle": ["error", "never"],
+    "react/prefer-stateless-function": 0,
+    "react/prop-types": 0
+
   }
 }

@@ -5,4 +5,4 @@ export const ARTICLES_QUERY = `{
     id
     title
   }
-}`;
+}`
