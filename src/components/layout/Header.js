@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <Row className="header">
-        <Col><img src={process.env.PUBLIC_URL + '/images/logo.png'} /></Col>
+        <Col><img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Logo Billin" /></Col>
       </Row>
     )
   }
