@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { Row, Col } from 'reactstrap'
 
 class Footer extends Component {
   render() {
     return (
-      <div className="footer">
-        <p>Billin code challenge</p>
-      </div>
+      <Row>
+        <Col><p>Billin code challenge</p></Col>
+      </Row>
     )
   }
 }
