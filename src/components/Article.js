@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
-import { Col, CardLink, Card, CardText, CardBody, CardTitle, CardFooter } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
+import ArticleCardPage from '../containers/common/ArticleCardPage'
+import HeaderPage from '../containers/layout/HeaderPage'
+import FooterPage from '../containers/layout/FooterPage'
 
 class Article extends Component {
+  componentWillMount() {
+    if (!this.props.articles) {
+      this.props.history.push('/')
+    } else {
+      this.props.filterArticle(this.props.match.params.articleId)
+    }
+  }
+
   render() {
-    const { article: { author, title, excerpt } } = this.props
+    const { article } = this.props
+    if (!article) return null
 
     return (
-      <Col xs="12" sm="6" md="4">
-        <Card>
-          <CardBody>
-            <CardTitle>{title}</CardTitle>
-            <CardText>{excerpt.substring(0, 100)}</CardText>
-            <CardLink href="#">Read more</CardLink>
-          </CardBody>
-          <CardFooter className="text-muted">By {author}</CardFooter>
-        </Card>
-      </Col>
+      <Container>
+        <HeaderPage />
+        <Row>
+          <Col>
+            <ArticleCardPage article={article[0]} single />
+          </Col>
+        </Row>
+        <FooterPage />
+      </Container>
     )
   }
 }

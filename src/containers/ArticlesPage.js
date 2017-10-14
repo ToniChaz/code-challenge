@@ -5,7 +5,7 @@ import Articles from '../components/Articles'
 import articleActions from '../actions/article'
 
 export function mapStateToProps(state) {
-  return { ...state.articles, ...state.router }
+  return { ...state.articles }
 }
 
 export function mapDispatchToProps(dispatch) {
