@@ -4,8 +4,8 @@ import { Row, Col } from 'reactstrap'
 class Footer extends Component {
   render() {
     return (
-      <Row>
-        <Col><p>Billin code challenge</p></Col>
+      <Row className="footer">
+        <Col><p>&copy; 2017 Billin code challenge</p></Col>
       </Row>
     )
   }

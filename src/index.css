@@ -1,0 +1,68 @@
+/*
+*
+* Custom Styles
+*/
+body {
+    height: 100vh;
+}
+body {
+    min-height: 100vh;
+}
+
+body {
+    background: rgba(3, 168, 244, 1);
+    background: -moz-linear-gradient(top, rgba(3, 168, 244, 1) 0%, rgba(255, 255, 255, 0.74) 26%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(3, 168, 244, 1)), color-stop(26%, rgba(255, 255, 255, 0.74)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(top, rgba(3, 168, 244, 1) 0%, rgba(255, 255, 255, 0.74) 26%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(top, rgba(3, 168, 244, 1) 0%, rgba(255, 255, 255, 0.74) 26%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(top, rgba(3, 168, 244, 1) 0%, rgba(255, 255, 255, 0.74) 26%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(3, 168, 244, 1) 0%, rgba(255, 255, 255, 0.74) 26%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#03a8f4', endColorstr='#ffffff', GradientType=0);
+    background-repeat: no-repeat;
+}
+
+/*
+* Layout
+*/
+.header {
+    margin: 15px -15px;
+}
+.footer {
+    margin: 15px -15px;
+    text-align: center;
+}
+
+/*
+* Card
+*/
+.card a.card-link, a:visited, a:hover, a:active {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    transition: 0.5s color ease;
+    text-decoration: none;
+    color: #03a9f4;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.card a.card-link:hover {
+    color: #006fe6;
+}
+
+.card a:after {
+    content: "";
+    transition: 0.5s all ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    height: 0.15rem;
+    width: 0;
+    background: #006fe6;
+    bottom: -0.15em;
+}
+
+.card a:hover:after {
+    width: 100%;
+}

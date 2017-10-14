@@ -6,9 +6,11 @@ import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 
-import 'bootstrap/dist/css/bootstrap.css'
-
 import createHistory from 'history/createBrowserHistory'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+
 import Router from './router'
 
 import rootReducer from './reducers'
