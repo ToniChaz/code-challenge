@@ -6,7 +6,7 @@ import ArticleCard from '../../components/common/ArticleCard'
 import articleActions from '../../actions/article'
 
 export function mapDispatchToProps(dispatch) {
-  return bindActionCreators({...articleActions, push, goBack}, dispatch)
+  return bindActionCreators({ ...articleActions, push, goBack }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(ArticleCard)

@@ -4,10 +4,10 @@ import action from '../../actions/article'
 import type from '../../constants/actions/article'
 import { DELETE } from '../../constants/service/mutations'
 
-export function* deleteArticle() {
+export function* deleteArticle({ articleId }) {
   try {
-    const response = yield call(articleService, DELETE)
-    yield put(action.fetchArticlesSuccess(response.data.articles))
+    const response = yield call(articleService, DELETE, articleId)
+    yield put(action.fetchArticlesSuccess(response.data.id))
   } catch (error) {
     yield put(action.fetchArticlesError(error))
   }

@@ -22,11 +22,13 @@ const UPDATE = `{
   }
 }`
 
-const DELETE = articleId => `{
- deleteArticle(id: ${articleId}) {
-    status
+const DELETE = `
+  mutation Mutations($id: String!){
+    deleteArticle(id: $id){
+      id
+    }
   }
-}`
+`
 
 export {
   CREATE,

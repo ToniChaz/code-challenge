@@ -1,5 +1,5 @@
 import { requestHandler } from '../serviceHandler'
 
-export default function(deleteArticle, articleId) {
-  return requestHandler('/graphql', { mutation: deleteArticle(articleId) })
+export default function(mutation, articleId) {
+  return requestHandler('/graphql', mutation, { id: articleId })
 }
