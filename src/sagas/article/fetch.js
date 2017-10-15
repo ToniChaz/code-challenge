@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 import articleService from '../../services/article/fetch'
 import action from '../../actions/article'
 import type from '../../constants/actions/article'
-import { ARTICLES_QUERY } from '../../constants/querys/queries'
+import { ARTICLES_QUERY } from '../../constants/service/queries'
 
 export function* fetchArticles() {
   try {

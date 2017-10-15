@@ -5,6 +5,7 @@
 body {
     height: 100vh;
 }
+
 body {
     min-height: 100vh;
 }
@@ -27,6 +28,7 @@ body {
 .header {
     margin: 15px -15px;
 }
+
 .footer {
     margin: 15px -15px;
     text-align: center;
@@ -35,7 +37,7 @@ body {
 /*
 * Card
 */
-.card a.card-link, a:visited, a:hover, a:active {
+.card button.btn-extra {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: relative;
@@ -44,13 +46,15 @@ body {
     color: #03a9f4;
     font-size: 1em;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
-.card a.card-link:hover {
+.card button.btn-extra:hover {
     color: #006fe6;
 }
 
-.card a:after {
+.card button.btn-extra:after {
     content: "";
     transition: 0.5s all ease;
     -webkit-backface-visibility: hidden;
@@ -63,6 +67,6 @@ body {
     bottom: -0.15em;
 }
 
-.card a:hover:after {
+.card button.btn-extra:hover:after {
     width: 100%;
 }
