@@ -9,7 +9,7 @@ export function mapStateToProps(state) {
 }
 
 export function mapDispatchToProps(dispatch) {
-  return bindActionCreators(articleActions, dispatch)
+  return bindActionCreators({ ...articleActions }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Article)

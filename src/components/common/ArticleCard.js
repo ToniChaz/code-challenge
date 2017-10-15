@@ -22,14 +22,13 @@ class ArticleCard extends Component {
       <CardBody>
         <CardTitle>{props.article.title}</CardTitle>
         <CardText>{props.article.excerpt}</CardText>
-        <Button color="link" className="btn-extra" onClick={() => props.push(`/${props.article.id}`)}>Read
-          more</Button>
+        <Button color="link" className="btn-extra" onClick={() => props.push(`/${props.article.id}`)}>Read more</Button>
       </CardBody>
     )
   }
 
   render() {
-    const { article: { author, id }, deleteArticle, updateArticle, single = false } = this.props
+    const { article, deleteArticle, openModal, single = false } = this.props
 
     return (
       <Card>
@@ -37,12 +36,12 @@ class ArticleCard extends Component {
         <CardFooter className="text-muted">
           <Row>
             <Col md={single ? 3 : 12}>
-              By {author}
+              By {article.author}
             </Col>
             {single &&
             <Col md="9">
-              <Button color="danger" className="float-right" onClick={() => deleteArticle(id)}>Delete</Button>
-              <Button color="success" className="float-right" onClick={() => updateArticle(id)}>Update</Button>
+              <Button color="danger" className="float-right" onClick={() => deleteArticle(article.id)}>Delete</Button>{' '}
+              <Button color="success" className="float-right" onClick={() => openModal(article)}>Update</Button>
             </Col>
             }
           </Row>
