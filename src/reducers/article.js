@@ -34,7 +34,16 @@ function fetchArticlesSuccess(state, { articles }) {
   }
 }
 
-function fetchArticlesError(state, { error }) {
+function deleteArticlesSuccess(state, { articleId }) {
+  return {
+    ...state,
+    articles: state.articles.filter(article => article.id !== articleId),
+    loading: false,
+    error: null
+  }
+}
+
+function articlesError(state, { error }) {
   return {
     ...state,
     loading: false,
@@ -50,8 +59,10 @@ export default function(state = initialState(), action) {
       return filterArticle(state, action)
     case type.FETCH_ARTICLES_SUCCESS:
       return fetchArticlesSuccess(state, action)
-    case type.FETCH_ARTICLES_ERROR:
-      return fetchArticlesError(state, action)
+    case type.DELETE_ARTICLE_SUCCESS:
+      return deleteArticlesSuccess(state, action)
+    case type.ARTICLES_ERROR:
+      return articlesError(state, action)
     default:
       return state
   }

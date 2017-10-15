@@ -4,6 +4,11 @@ export default {
   fetchArticles: () => ({ type: type.FETCH_ARTICLES }),
   filterArticle: articleId => ({ type: type.FILTER_ARTICLE, articleId }),
   deleteArticle: articleId => ({ type: type.DELETE_ARTICLE, articleId }),
+  updateArticle: article => ({ type: type.UPDATE_ARTICLE, article }),
+  createArticle: article => ({ type: type.CREATE_ARTICLE, article }),
   fetchArticlesSuccess: articles => ({ type: type.FETCH_ARTICLES_SUCCESS, articles }),
-  fetchArticlesError: error => ({ type: type.FETCH_ARTICLES_ERROR, error })
+  deleteArticleSuccess: articleId => ({ type: type.DELETE_ARTICLE_SUCCESS, articleId }),
+  updateArticleSuccess: articleId => ({ type: type.UPDATE_ARTICLE_SUCCESS, articleId }),
+  createArticleSuccess: articleId => ({ type: type.CREATE_ARTICLE_SUCCESS, articleId }),
+  articlesError: error => ({ type: type.ARTICLES_ERROR, error })
 }

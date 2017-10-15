@@ -107,8 +107,9 @@ const Mutations = new GraphQLObjectType({
       args: {
         id: { type: new GraphQLNonNull(GraphQLString) }
       },
-      resolve: (value, { id }) => {
-        return db.Article.delete(id)
+      resolve: async (value, { id }) => {
+        await db.Article.remove({ _id: id })
+        return { id }
       }
     }
   })

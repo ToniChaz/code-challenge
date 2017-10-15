@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card, CardText, CardBody, CardTitle, CardFooter, ButtonGroup } from 'reactstrap'
+import { Button, Card, CardText, CardBody, CardTitle, CardFooter, ButtonGroup, Col, Row } from 'reactstrap'
 import ArticleTagPage from '../../containers/common/ArticleTagPage'
 
 class ArticleCard extends Component {
@@ -29,13 +29,23 @@ class ArticleCard extends Component {
   }
 
   render() {
-    const { article: { author, id }, deleteArticle, single = false } = this.props
+    const { article: { author, id }, deleteArticle, updateArticle, single = false } = this.props
 
     return (
       <Card>
         {single ? this.getSingleContent(this.props) : this.getContent(this.props)}
-        <CardFooter className="text-muted">By {author}
-          <Button color="danger" className="float-right" onClick={() => deleteArticle(id)}>Delete</Button>
+        <CardFooter className="text-muted">
+          <Row>
+            <Col md={single ? 3 : 12}>
+              By {author}
+            </Col>
+            {single &&
+            <Col md="9">
+              <Button color="danger" className="float-right" onClick={() => deleteArticle(id)}>Delete</Button>
+              <Button color="success" className="float-right" onClick={() => updateArticle(id)}>Update</Button>
+            </Col>
+            }
+          </Row>
         </CardFooter>
       </Card>
     )

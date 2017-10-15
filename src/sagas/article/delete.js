@@ -7,9 +7,9 @@ import { DELETE } from '../../constants/service/mutations'
 export function* deleteArticle({ articleId }) {
   try {
     const response = yield call(articleService, DELETE, articleId)
-    yield put(action.fetchArticlesSuccess(response.data.id))
+    yield put(action.deleteArticleSuccess(response.data.deleteArticle.id))
   } catch (error) {
-    yield put(action.fetchArticlesError(error))
+    yield put(action.articlesError(error))
   }
 }
 

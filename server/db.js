@@ -27,7 +27,7 @@ ${Faker.lorem.paragraphs()}
       return Article.create({
         author: Faker.name.findName(),
         content,
-        excerpt: content.slice(0, 350),
+        excerpt: content.substring(0, 100),
         published: Faker.random.boolean(),
         tags: [Faker.random.words(), Faker.random.words()],
         title: Faker.name.title()

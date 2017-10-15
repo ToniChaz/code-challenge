@@ -9,7 +9,7 @@ export function* fetchArticles() {
     const response = yield call(articleService, ARTICLES_QUERY)
     yield put(action.fetchArticlesSuccess(response.data.articles))
   } catch (error) {
-    yield put(action.fetchArticlesError(error))
+    yield put(action.articlesError(error))
   }
 }
 
