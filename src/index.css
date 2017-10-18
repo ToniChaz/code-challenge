@@ -73,3 +73,10 @@ button {
 .card button.btn-extra:hover:after {
     width: 100%;
 }
+
+@media (min-width: 1024px) {
+    .modal-dialog {
+        max-width: 750px;
+        margin: 30px auto;
+    }
+}

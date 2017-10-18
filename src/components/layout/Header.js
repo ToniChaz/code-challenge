@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <Row className="header">
         <Col md="10"><img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Logo Billin" /></Col>
-        <Col md="2"><Button color="success" onClick={() => openModal(null)} className="float-right">New article</Button></Col>
+        <Col md="2"><Button color="success" onClick={() => openModal()} className="float-right">New article</Button></Col>
         <ArticleModalPage />
       </Row>
     )
