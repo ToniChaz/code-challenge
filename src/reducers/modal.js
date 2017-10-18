@@ -3,6 +3,7 @@ import type from '../constants/actions/modal'
 export function initialState() {
   return {
     visible: false,
+    edit: false,
     modalData: {
       author: '',
       content: '',
@@ -17,6 +18,7 @@ function openModal(state, { modalData }) {
   return {
     ...state,
     visible: true,
+    edit: !!modalData,
     modalData: modalData || initialState().modalData
   }
 }

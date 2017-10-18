@@ -98,7 +98,18 @@ const Mutations = new GraphQLObjectType({
         article: { type: articleInputType }
       },
       resolve: (value, { article }) => {
-        return db.Article.update(article)
+        console.log('---------------->', article)
+        return db.Article.update(
+          { _id: article.id },
+          {
+            author: article.author,
+            excerpt: article.excerpt,
+            content: article.content,
+            title: article.title,
+            published: article.published,
+            tags: article.tags
+          }
+        )
       }
     },
     deleteArticle: {

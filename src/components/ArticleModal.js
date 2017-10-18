@@ -7,15 +7,20 @@ class ArticleModal extends Component {
   }
 
   saveArticle() {
-    console.log(this.props.modalData)
+    if (this.props.edit) {
+      this.props.updateArticle(this.props.modalData)
+    } else {
+      this.props.createArticle(this.props.modalData)
+    }
+
   }
 
   render() {
-    const { visible, modalData, closeModal } = this.props
+    const { visible, modalData, closeModal, edit } = this.props
 
     return (
       <Modal isOpen={visible} toggle={closeModal}>
-        <ModalHeader toggle={closeModal}>{modalData.title !== '' ? 'Edit ' : 'Add new '}
+        <ModalHeader toggle={closeModal}>{edit ? 'Edit ' : 'Add new '}
           article</ModalHeader>
         <Form>
           <ModalBody>
