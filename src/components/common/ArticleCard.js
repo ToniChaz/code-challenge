@@ -29,7 +29,6 @@ class ArticleCard extends Component {
 
   render() {
     const { article, deleteArticle, openModal, single = false } = this.props
-
     return (
       <Card>
         {single ? this.getSingleContent(this.props) : this.getContent(this.props)}
@@ -40,7 +39,8 @@ class ArticleCard extends Component {
             </Col>
             {single &&
             <Col md="9">
-              <Button color="danger" className="float-right" onClick={() => deleteArticle(article.id)}>Delete</Button>{' '}
+              <Button color="danger" className="float-right"
+                      onClick={() => deleteArticle(article.id)}>Delete</Button>{' '}
               <Button color="success" className="float-right" onClick={() => openModal(article)}>Update</Button>
             </Col>
             }

@@ -74,6 +74,61 @@ button {
     width: 100%;
 }
 
+/*
+* Custom Alert
+ */
+
+.custom-alert {
+    position: fixed;
+    top: 0;
+    z-index: 1100;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.custom-alert > div {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.custom-alert::after {
+    float: right;
+    margin: -55px 25px;
+    content: "x";
+    font-weight: bold;
+}
+
+@media (min-width: 576px) {
+    .custom-alert {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .custom-alert {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .custom-alert {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .custom-alert {
+        max-width: 1140px;
+    }
+}
+
 @media (min-width: 1024px) {
     .modal-dialog {
         max-width: 750px;

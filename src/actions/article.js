@@ -9,6 +9,5 @@ export default {
   fetchArticlesSuccess: articles => ({ type: type.FETCH_ARTICLES_SUCCESS, articles }),
   deleteArticleSuccess: articleId => ({ type: type.DELETE_ARTICLE_SUCCESS, articleId }),
   updateArticleSuccess: article => ({ type: type.UPDATE_ARTICLE_SUCCESS, article }),
-  createArticleSuccess: article => ({ type: type.CREATE_ARTICLE_SUCCESS, article }),
-  articlesError: error => ({ type: type.ARTICLES_ERROR, error })
+  createArticleSuccess: article => ({ type: type.CREATE_ARTICLE_SUCCESS, article })
 }

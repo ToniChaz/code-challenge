@@ -43,11 +43,21 @@ function deleteArticlesSuccess(state, { articleId }) {
   }
 }
 
-function articlesError(state, { error }) {
+function updateArticleSuccess(state, { article }) {
   return {
     ...state,
+    article,
     loading: false,
-    error
+    error: null
+  }
+}
+
+function createArticleSuccess(state, { article }) {
+  return {
+    ...state,
+    articles: state.articles.concat(article),
+    loading: false,
+    error: null
   }
 }
 
@@ -61,8 +71,10 @@ export default function(state = initialState(), action) {
       return fetchArticlesSuccess(state, action)
     case type.DELETE_ARTICLE_SUCCESS:
       return deleteArticlesSuccess(state, action)
-    case type.ARTICLES_ERROR:
-      return articlesError(state, action)
+    case type.UPDATE_ARTICLE_SUCCESS:
+      return updateArticleSuccess(state, action)
+    case type.CREATE_ARTICLE_SUCCESS:
+      return createArticleSuccess(state, action)
     default:
       return state
   }

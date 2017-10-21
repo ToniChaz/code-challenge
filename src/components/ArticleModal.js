@@ -8,23 +8,44 @@ class ArticleModal extends Component {
     this.props.onChangeHandler(event.target.name, event.target.value)
   }
 
+  validate(article) {
+    if (article.title === '') {
+      this.props.openAlert('danger', 'The title can´t be empty')
+      return false
+    }
+    if (article.content === '') {
+      this.props.openAlert('danger', 'The content can´t be empty')
+      return false
+    }
+    if (article.author === '') {
+      this.props.openAlert('danger', 'The author can´t be empty')
+      return false
+    }
+    if (article.tags === '') {
+      this.props.openAlert('danger', 'The tags can´t be empty')
+      return false
+    }
+    return true
+  }
+
   saveArticle() {
     const article = this.props.modalData
-    const newArticle = {
-      ...article,
-      ...{
-        content: article.content.replace(/^\s+|\s+$/g, ''),
-        tags: setTags(article),
-        excerpt: setExcerpt(article),
-        published: article.published === '' || article.published === 'true'
+    if (this.validate(article)) {
+      const newArticle = {
+        ...article,
+        ...{
+          content: article.content.replace(/^\s+|\s+$/g, ''),
+          tags: setTags(article),
+          excerpt: setExcerpt(article),
+          published: article.published === '' || article.published === 'true'
+        }
+      }
+      if (this.props.edit) {
+        this.props.updateArticle(newArticle)
+      } else {
+        this.props.createArticle(newArticle)
       }
     }
-    if (this.props.edit) {
-      this.props.updateArticle(newArticle)
-    } else {
-      this.props.createArticle(newArticle)
-    }
-
   }
 
   render() {

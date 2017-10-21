@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import ArticleModal from '../components/ArticleModal'
 import modalActions from '../actions/modal'
+import alertActions from '../actions/alert'
 import articleActions from '../actions/article'
 
 export function mapStateToProps(state) {
@@ -12,6 +13,7 @@ export function mapStateToProps(state) {
 export function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     ...modalActions,
+    ...alertActions,
     ...{
       createArticle: articleActions.createArticle,
       updateArticle: articleActions.updateArticle
