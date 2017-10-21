@@ -1,0 +1,115 @@
+exports[`fetchArticles saga fetchArticles error 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "{
+  articles {
+    author
+    excerpt
+    content
+    id
+    title
+    published
+    tags
+  }
+}",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`fetchArticles saga fetchArticles error 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "color": "danger",
+      "text": "An error occurred: Error test",
+      "type": "OPEN_ALERT",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`fetchArticles saga fetchArticles error 3`] = `true`;
+
+exports[`fetchArticles saga fetchArticles should trigger on every FETCH_ARTICLE action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "FORK": Object {
+    "args": Array [
+      "FETCH_ARTICLES",
+      [Function],
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`fetchArticles saga fetchArticles success 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "{
+  articles {
+    author
+    excerpt
+    content
+    id
+    title
+    published
+    tags
+  }
+}",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`fetchArticles saga fetchArticles success 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "articles": Array [
+        Object {
+          "_id": "59eb8261d2ddc040ead6c7fa",
+          "author": "Bertram Wintheiser",
+          "content": "Et iure enim saepe. Repellat reprehenderit sequi id. Eveniet sit ex. Rem et labore temporibus dicta architecto reprehenderit qui. Consequatur amet aspernatur porro.",
+          "excerpt": "Et iure enim saepe. Repellat reprehenderit sequi id. Eveniet sit ex. Rem et labore temporibus dicta ",
+          "published": false,
+          "tags": Array [
+            "Avon portal Outdoors",
+            "networks Berkshire Fish",
+          ],
+          "title": "Senior Communications Coordinator",
+        },
+        Object {
+          "_id": "59eb8261d2ddc040ead6c7fb",
+          "author": "Asha Koelpin DDS",
+          "content": "Hic ut quia ipsam. Atque neque nam molestiae earum explicabo ab. Molestias soluta molestiae rem similique tenetur. Maiores doloribus rerum corrupti sed voluptatum nostrum delectus facere et.",
+          "excerpt": "Hic ut quia ipsam. Atque neque nam molestiae earum explicabo ab. Molestias soluta molestiae rem simi",
+          "published": true,
+          "tags": Array [
+            "New Mexico moderator Practical",
+            "Ethiopian Birr",
+          ],
+          "title": "Internal Tactics Supervisor",
+        },
+      ],
+      "type": "FETCH_ARTICLES_SUCCESS",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`fetchArticles saga fetchArticles success 3`] = `true`;

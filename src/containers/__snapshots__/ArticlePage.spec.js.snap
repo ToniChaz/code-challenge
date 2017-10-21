@@ -1,0 +1,22 @@
+exports[`ArticlesPage container should map ArticlesPage actions creators in a prop called "actions" 1`] = `
+Array [
+  "fetchArticles",
+  "filterArticle",
+  "deleteArticle",
+  "updateArticle",
+  "createArticle",
+  "fetchArticlesSuccess",
+  "deleteArticleSuccess",
+  "updateArticleSuccess",
+  "createArticleSuccess",
+]
+`;
+
+exports[`ArticlesPage container should map ArticlesPage state props 1`] = `
+Object {
+  "article": null,
+  "articles": null,
+  "error": null,
+  "loading": true,
+}
+`;

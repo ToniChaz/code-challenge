@@ -1,0 +1,8 @@
+exports[`Testing App Renders correctly 1`] = `
+<Container
+  tag="div">
+  <Connect(Header) />
+  <Connect(Articles) />
+  <Connect(Footer) />
+</Container>
+`;
