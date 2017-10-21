@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import setTags from '../utils/setTags'
+import setExcerpt from '../utils/setExcerpt'
 
 class ArticleModal extends Component {
   onChangeHandler(event) {
@@ -7,10 +9,20 @@ class ArticleModal extends Component {
   }
 
   saveArticle() {
+    const article = this.props.modalData
+    const newArticle = {
+      ...article,
+      ...{
+        content: article.content.replace(/^\s+|\s+$/g, ''),
+        tags: setTags(article),
+        excerpt: setExcerpt(article),
+        published: article.published === '' || article.published === 'true'
+      }
+    }
     if (this.props.edit) {
-      this.props.updateArticle(this.props.modalData)
+      this.props.updateArticle(newArticle)
     } else {
-      this.props.createArticle(this.props.modalData)
+      this.props.createArticle(newArticle)
     }
 
   }

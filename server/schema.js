@@ -87,8 +87,9 @@ const Mutations = new GraphQLObjectType({
       args: {
         article: { type: articleInputType }
       },
-      resolve: (value, { article }) => {
-        return db.Article.create(article)
+      resolve: async (value, { article }) => {
+        await db.Article.create(article)
+        return article
       }
     },
     updateArticle: {
@@ -97,9 +98,8 @@ const Mutations = new GraphQLObjectType({
       args: {
         article: { type: articleInputType }
       },
-      resolve: (value, { article }) => {
-        console.log('---------------->', article)
-        return db.Article.update(
+      resolve: async (value, { article }) => {
+        await db.Article.update(
           { _id: article.id },
           {
             author: article.author,
@@ -110,6 +110,7 @@ const Mutations = new GraphQLObjectType({
             tags: article.tags
           }
         )
+        return article
       }
     },
     deleteArticle: {
