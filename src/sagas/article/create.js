@@ -16,7 +16,6 @@ export function* createArticle({ article }) {
     yield put(push('/'))
   } catch (error) {
     yield put(alertAction.openAlert('danger', `An error occurred: ${error.message}`))
-    yield put(modalAction.closeModal())
   }
 }
 

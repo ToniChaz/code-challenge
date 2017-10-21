@@ -14,7 +14,6 @@ export function* updateArticle({ article }) {
     yield put(modalAction.closeModal())
   } catch (error) {
     yield put(alertAction.openAlert('danger', `An error occurred: ${error.message}`))
-    yield put(modalAction.closeModal())
   }
 }
 

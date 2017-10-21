@@ -14,7 +14,6 @@ export function* deleteArticle({ articleId }) {
     yield put(push('/'))
   } catch (error) {
     yield put(alertAction.openAlert('danger', `An error occurred: ${error.message}`))
-    yield put(push('/'))
   }
 }
 
