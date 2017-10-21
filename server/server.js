@@ -2,6 +2,7 @@ import Express from 'express'
 import GraphHTTP from 'express-graphql'
 import bodyParser from 'body-parser'
 import Schema from './schema'
+import { initData } from './article/model'
 
 const APP_PORT = 4000
 
@@ -23,6 +24,10 @@ app.use('/graphql', GraphHTTP({
   graphiql: true,
   pretty: true
 }))
+
+if (process.argv.includes('init')) {
+  initData()
+}
 
 app.listen(APP_PORT, () => {
   console.log(`App listening on port ${APP_PORT}`) // eslint-disable-line no-console
